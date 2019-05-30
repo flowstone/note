@@ -35,5 +35,9 @@
 非阻塞(non-blocking) IO：资源不可用时，IO请求离开返回，返回数据标识资源不可用。
 同步(synchronous) IO：应用阻塞在发送或接收数据的状态，直到数据成功传输或返回失败。
 异步(asynchronous) IO：应用发送或接收数据后立刻返回，实际处理是异步执行的。
+
+
 阻塞和非阻塞是获取资源的方式，同步/异步是程序如何处理资源的逻辑设计。代码中使用的API：ServerSocket#accept、InputStream#read都是阻塞的API。操作系统底层API中，默认Socket操作都是Blocking型，send/recv等接口都是阻塞的。
+
+
 带来的问题，阻塞导致在处理网络I/0时，一个线程只能处理一个网络连接。
