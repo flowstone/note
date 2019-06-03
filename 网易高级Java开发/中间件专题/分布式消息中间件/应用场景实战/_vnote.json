@@ -1,0 +1,28 @@
+{
+    "created_time": "2019-06-03T15:11:19Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:18:23Z",
+            "modified_time": "2019-06-03T15:18:23Z",
+            "name": "消息中间件监控方案及应用场景.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:18:43Z",
+            "modified_time": "2019-06-03T15:18:43Z",
+            "name": "网易后端架构中消息中间件应用(网易云).md",
+            "tags": [
+            ]
+        }
+    ],
+    "sub_directories": [
+    ],
+    "version": "1"
+}

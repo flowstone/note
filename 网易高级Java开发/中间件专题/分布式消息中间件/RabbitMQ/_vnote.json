@@ -1,0 +1,58 @@
+{
+    "created_time": "2019-06-03T15:10:35Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:13:37Z",
+            "modified_time": "2019-06-03T15:13:37Z",
+            "name": "RabbitMQ入门及内部消息分发机制.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:13:55Z",
+            "modified_time": "2019-06-03T15:13:55Z",
+            "name": "RabbitMQ集群和高可用方案.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:14:21Z",
+            "modified_time": "2019-06-03T15:14:21Z",
+            "name": "持久化机制、内存、磁盘控制.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:14:36Z",
+            "modified_time": "2019-06-03T15:14:36Z",
+            "name": "消息可靠性和插件化机制.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:15:09Z",
+            "modified_time": "2019-06-03T15:15:09Z",
+            "name": "饿了么外卖场景，分布式事务解决方案.md",
+            "tags": [
+            ]
+        }
+    ],
+    "sub_directories": [
+    ],
+    "version": "1"
+}

@@ -1,0 +1,48 @@
+{
+    "created_time": "2019-06-03T15:10:25Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:12:11Z",
+            "modified_time": "2019-06-03T15:12:11Z",
+            "name": "ActiveMQ入门.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:12:38Z",
+            "modified_time": "2019-06-03T15:12:38Z",
+            "name": "ActiveMQ支持的消息协议讲解.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:12:56Z",
+            "modified_time": "2019-06-03T15:12:56Z",
+            "name": "ActiveMQ高可用集群方案.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2019-06-03T15:13:10Z",
+            "modified_time": "2019-06-03T15:13:10Z",
+            "name": "持久化原理及事务机制.md",
+            "tags": [
+            ]
+        }
+    ],
+    "sub_directories": [
+    ],
+    "version": "1"
+}
