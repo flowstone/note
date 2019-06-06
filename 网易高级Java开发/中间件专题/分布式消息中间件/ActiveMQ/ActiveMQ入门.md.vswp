@@ -35,6 +35,142 @@ Java消息服务(Java Message Service,即JMS)应用程序接口是一个Java平�
 ## JMS的消息结构
 ![jms的消息结构](_v_images/20190605170910742_1780.png)
 
-## JMS的消息结构
+
 ![jms消息结构](_v_images/20190605171240304_26542.png)
 
+消息属性可以理解为消息的附加消息头，属性名可以自定义
+![属性值类型](_v_images/20190606113240152_6663.png)
+
+![消息体类型](_v_images/20190606113344899_16969.png =600x)
+
+## ActiveMQ的特性
+> 支持多种编程语言
+> 支持多种传输协议
+> 有多种持久化方式
+
+## 安装ActiveMQ
+### 环境准备
+> CentOS7
+> JDK1.8
+### 下载ActiveMQ
+进入/tmp目录
+``` bash
+cd /tmp
+```
+
+使用wget下载存档
+``` bash
+wget -c  下载地址
+```
+
+提取存档
+``` bash
+tar -zxvf 文件包 -C /var
+```
+
+修改ActiveMQ的目录名
+``` bash
+mv /var/文件包/   /var/activemq/
+```
+
+### 启动ActiveMQ
+以后台进程启动成功会有以下输出
+```
+INFO: Loading '/var/activemq//bin/env'
+INFO: Using java '/usr/local/developer/jdk1.8.0_211/bin/java'
+INFO: Starting - inspect logfiles specified in logging.properties and log4j.properties to get details
+INFO: pidfile created : '/var/activemq//data/activemq.pid' (pid '8512')
+```
+
+作为后台进程启动ActiveMQ
+```
+./bin/activemq start
+```
+
+停止ActiveMQ
+```
+./bin/activemq stop
+```
+
+## ActiveMQ服务
+前面使用命令运行ActiveMQ,但最好的方式是将ActiveMQ作为服务启动，使用system服务将可以确保ActiveMQ能在系统启动时自动启动。
+
+### 创建ActiveMQ服务
+1、使用vim创建一个systemd服务文件
+```
+vi /usr/lib/systemd/system/activemq.service
+```
+2、填入以下内容
+```
+[Unit]
+Description=ActiveMQ service
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/var/activemq/bin/activemq start
+ExecStop=/var/activemq/bin/activemq stop
+User=root
+Group=root
+Restart=always
+RestartSec=9
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=activemq
+
+[Install]
+WantedBy=multi-user.target
+```
+
+3、修改/var/activemq/bin/env配置，在配置文件中修改如下
+```
+# Location of the java installation
+# Specify the location of your java installation using JAVA_HOME, or specify the
+# path to the "java" binary using JAVACMD
+# (set JAVACMD to "auto" for automatic detection)
+JAVA_HOME="/usr/local/java/jdk1.8.0_181"
+JAVACMD="auto"
+```
+
+### ActiveMQ服务操作
+启动ActiveMQ服务
+```
+systemctl start activemq
+```
+
+查看服务状态
+```
+systemctl status activemq
+```
+
+设置开机自动启动
+```
+ln -s /usr/lib/systemd/system/activemq.service /etc/systemd/system/multi-user.target.wants/activemq.service
+systemctl enable activemq
+```
+
+#### 防火墙添加ActiveMQ的端口
+ActiveMQ启动后，外部还无法访问，还需要在防火墙配置中增加ActiveMQ的Web管理端口和通讯端口。
+
+添加端口
+```
+Web管理端口默认为8161（admin/admin），通讯端口默认为61616
+firewall-cmd --zone=public --add-port=8161/tcp --permanent
+firewall-cmd --zone=public --add-port=61616/tcp --permanent
+```
+
+重启防火墙
+```
+systemctl restart firewalld.service
+```
+
+### 使用ActiveMQ
+#### 使用ActiveMQ的Web管理平台
+ActiveMQ自带有管理平台，在浏览器访问http://服务ip:8161/admin即可进入
+ActiveMQ的管理页面默认开启了身份校验
+账号：admin
+密码：admin
+![使用apache activemq](_v_images/20190606121744450_6529.png =700x)
+
+#### Web管理配置
+ActiveMQ的Web管理平台是基于
