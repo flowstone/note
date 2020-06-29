@@ -7,10 +7,28 @@
     "recycle_bin_folder": "_v_recycle_bin",
     "sub_directories": [
         {
-            "name": "java"
+            "name": "1-高性能编程专题"
         },
         {
-            "name": "网易高级Java开发"
+            "name": "2-中间件专题"
+        },
+        {
+            "name": "3-容器化技术专题"
+        },
+        {
+            "name": "4-分布式系统开发技术"
+        },
+        {
+            "name": "5-云课堂后端项目实战"
+        },
+        {
+            "name": "6-网易商业化项目分享"
+        },
+        {
+            "name": "面试题"
+        },
+        {
+            "name": "前端框架"
         }
     ],
     "tags": [
